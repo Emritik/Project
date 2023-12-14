@@ -1,0 +1,24 @@
+<header>
+  <a href="#" class="logo">STET</a>
+
+  <nav class="navbar">
+    <a href="{% url 'home' %}" class="active">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="#">Servies</a>
+    <a href="{% url 'contact' %}">Contact</a>
+  </nav>
+
+  <div class="icons">
+    <i class="fas fa-bars" id = 'menu-bars'></i>
+    <a href="{% url 'userprofile' %}" class="fas fa-user"></a>
+    {% if request.user.is_authenticated %}
+    <a href="/logout/" class="linka"><button class="buttons">Logout</button></a>
+
+    {% else %}
+    <a href="/login/" class="linka"><button class="buttons">Login</button></a>
+
+    {% endif %}
+
+
+  </div>
+</header>

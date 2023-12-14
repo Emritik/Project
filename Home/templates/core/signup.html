@@ -1,0 +1,41 @@
+{% extends "core/base.html" %} {% block title %}Sign up{% endblock title %} \
+{% block content %}
+
+<div class="wrapper">
+  <div class="inner">
+    <form action="." method="post">
+      {% csrf_token %}
+      <h3>Sign Up</h3>
+      <div class="form-holder">
+        <span class="lnr lnr-user"></span>
+        <input type="text" class="form-control" placeholder="Username" name="username">
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-envelope"></span>
+        <input type="text" class="form-control" placeholder="Mail" name="email">
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Password" name="password1"> 
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Repeat Password" name="password2">
+      </div>
+      <button class="btns">
+        <span>Register</span>
+      </button >  
+       <div class="cont">
+    Aready have an a account <a href="/login/">login</a>
+       </div>
+
+    </form>
+
+  </div>
+  
+</div>
+
+        
+
+  {% endblock content %}
+</div>

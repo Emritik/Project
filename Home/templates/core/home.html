@@ -1,0 +1,180 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %} 
+
+
+{% block content %}
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/One-Stop.png' %}" class="d-block w-100" alt="..."  id="changesize">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/img1.png' %}" class="d-block w-100" alt="..."  id="changesize">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/IMG2.png' %}" class="d-block w-100" alt="..."  id="changesize">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<nav class="navbar bg-primary" data-bs-theme="dark" style="height: 120px;">
+  <h3 class="text-center">Register now with easy steps in order to access varuious services of Government of sikkim.<button type="button" class="btn btn-dark">GO</button>
+  </h3>
+
+</nav>
+<div class="container my-5 ">
+  <h1 class="text-center" style="font-size: 32px;">Welcome <span class="badge text-bg-dark">To</span>Sikkim Teachers Eligibility Test.
+  </h1>
+  <p class="lead text-center fs-4 fw-bold mt-5">The Teacher Eligibility Test, known as TET, is the minimum qualification required in India for a person to be eligible for appointment as a teacher. The test is mandatory for teaching jobs in any government schools across India.</p>
+</div>
+
+
+<div class="container" >
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row" id="iconsa">
+      <div class="col-lg-3">
+       <a href="{% url 'signup' %}"> <img id="last-img" class="bd-placeholder-img rounded-circle" width="150" height="150" src="{% static 'images/reg.jpeg' %}" role="img" aria-label="Registration" preserveAspectRatio="xMidYMid slice" focusable="false"></a><title>Registraion</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
+        <h2 class="fw-normal" style="margin-left: 45px;">Registraion</h2>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-3">
+        <a href="{% url 'application' %}"> <img id="last-img" class="bd-placeholder-img rounded-circle" width="175" height="175" src="{% static 'images/of.jpeg' %}" role="img" aria-label="Online application" preserveAspectRatio="xMidYMid slice" focusable="false"></a><title>Online Application</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
+        <h2 class="fw-normal" style="margin-left: 5px;">Online Application</h2>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-3">
+        <a href="#"> <img id="last-img" class="bd-placeholder-img rounded-circle" width="200" height="200" src="{% static 'images/veri.png' %}" role="img" aria-label="Verification" preserveAspectRatio="xMidYMid slice" focusable="false"></a><title>Verification</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
+        <h2 class="fw-normal" style="margin-left: 45px;">Verification</h2>
+        
+      </div>
+      <div class="col-lg-3">
+        <a href="#"> <img id="last-img" class="bd-placeholder-img rounded-circle" width="225" height="225" src="{% static 'images/exam.jpeg' %}" role="img" aria-label="TET Examination" preserveAspectRatio="xMidYMid slice" focusable="false"></a><title>TET Examination</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
+        <h2 class="fw-normal" style="margin-left: 25px;">STET Examination</h2>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div class="container my-5 ">
+  <h1 class="text-center" style="font-size: 32px;">Watch STET  <span class="badge bg-success">Toturials</span> by clicking the link below...
+  <p class="lead text-center fs-4 fw-bold mt-5"><a href="#">View Toturials >>>></a></p>
+</div>
+
+<!---contacact page-->
+<section class="ftco-section">
+  <div class="container">
+    
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="wrappers">
+          <div class="row no-gutters">
+            <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <h3 class="mb-4">Get in touch</h3>
+                <div id="form-message-warning" class="mb-4"></div> 
+                <div id="form-message-success" class="mb-4">
+                  Your message was sent, thank you!
+                </div>
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="name">Full Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6"> 
+                      <div class="form-group">
+                        <label class="label" for="email">Email Address</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="subject">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="#">Message</label>
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary">
+                        <div class="submitting"></div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-5 d-flex align-items-stretch">
+              <div class="info-wrap bg-primary w-100 p-md-5 p-4">
+                <h3>Let's get in touch</h3>
+                <p class="mb-4">We're open for any suggestion or just to have a chat</p>
+                <div class="dbox w-100 d-flex align-items-start">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-map-marker"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Address:</span>ABESIT Campus Rd, near Crossing Republik, NE-3, Crossings Republik, Ghaziabad, Uttar Pradesh 201009 </p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-phone"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1234 5678 90</a></p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-paper-plane"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                  </div>
+                </div>
+                <div class="dbox w-100 d-flex align-items-center">
+                  <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-globe"></span>
+                  </div>
+                  <div class="text pl-3">
+                    <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}
+
+
+
+

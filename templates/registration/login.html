@@ -1,0 +1,40 @@
+{% extends "core/base.html" %} {% block title %}Login{% endblock title %} \
+{% block content %}
+<div class="wrapper">
+  <div class="inner">
+    <form action="." method="post">
+      {% csrf_token %}
+      <h3>Login</h3>
+      <div class="form-holder">
+        <span class="lnr lnr-user"></span>
+        <input type="text" class="form-control" placeholder="Username" name="username">
+      </div> 
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Password" name="password">
+      </div>
+      
+      <button class="btns">
+        <span>Login</span>
+      </button>
+      <div class="cont">
+        Create a new account <a href="{% url 'signup' %}">SignUp</a>
+           </div>
+
+       
+    </form>
+   {% if form.errors %} 
+  {% for field in form %} 
+    {% for error in field.errors %}
+    <div id="form-message-warning" class="mb-4">{{ error|escape }}</div> 
+
+    {% endfor %}
+  {% endfor %} 
+{% endif %}
+  </div>
+  
+</div>        
+
+  
+</div>
+{% endblock content %}

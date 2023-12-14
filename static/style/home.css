@@ -1,0 +1,17 @@
+#changesize{
+    height: 670px;
+}
+#last-img:hover{
+    transform: rotate(360deg);
+    transition: all 1.8s ease;
+}
+
+@media (max-width: 767px) {
+    #changesize{
+        height: 500px;
+        width: 20%;
+    }
+    #iconsa{
+        margin-left: 20%;
+    }
+    }
