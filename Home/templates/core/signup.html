@@ -28,7 +28,13 @@
        <div class="cont">
     Aready have an a account <a href="/login/">login</a>
        </div>
-
+{% if form.errors %} 
+  {% for field in form %} 
+    {% for error in field.errors %}
+      <div id="form-message-warning" class="mb-4">{{ error|escape }}</div> 
+    {% endfor %}
+  {% endfor %} 
+{% endif %}
     </form>
 
   </div>
